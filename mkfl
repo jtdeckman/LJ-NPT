@@ -1,0 +1,33 @@
+ =mpif90
+#FFLAGS = -O3
+FFLAGS = -g -O0
+OBJECTS = vgwmcnpt.o mvgwmodnpt.o mcmodnpt.o vgwmcobsvnpt.o ptvgwmnpt.o dlsode.o
+LAPACK = -L$(MKLROOT)/lib/em64t -lmkl_intel_lp64 -lmkl_sequential -lmkl_core
+
+all: vgwmcnpt.exe
+
+vgwmcnpt.exe:  $(OBJECTS)
+	$(FC) $(FFLAGS) -o $@ $^ $(LAPACK)
+	cp $@ ~/bin
+
+mvgwmodnpt.o: mvgwmodnpt.f90
+	$(FC) -c -o $@ $(FFLAGS) $^
+
+mcmodnpt.o: mcmodnpt.f90
+	$(FC) -c -o $@ $(FFLAGS) $^
+
+vgwmcnpt.o: vgwmcnpt.f90
+	$(FC) -c -o $@ $(FFLAGS) $^
+
+vgwmcobsvnpt.o: vgwmcobsvnpt.f90
+	$(FC) -c -o $@ $(FFLAGS) $^
+
+ptvgwmnpt.o : ptvgwmnpt.f90
+	$(FC) -c -o $@ $(FFLAGS) $^
+
+mcmodnpt.o : mvgwmodnpt.o
+
+clean:
+	$(RM) $(OBJECTS) vgwmcnpt.exe
+
+.PHONY: clean

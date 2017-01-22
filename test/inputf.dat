@@ -1,0 +1,28 @@
+0.01          % T min
+0.1           % T max
+-1            % P min
+0.0           % P max (old = 0.0051567)
+10            % # MC steps
+0             % # Equilibration steps
+-1.0          % Box length   
+0.05          % Initial step length
+100           % Reset frequency for acceptance ratio
+5             % Observable update frequency
+10000         % Observable write frequency, after n updates
+7.25          % Constraining radius for MC run
+50            % Grid size
+0             % Equidistant grid (non-geometric)
+1000000000    % PT swap interval
+Ne            % VMD coords tag
+100000        % VMD coords write frequency
+0             % Continue previous run
+0.0           % ENOT
+-1.0          % Volume step length
+-1.0          % Volume step frequency (after n trans. steps)
+100000        % Refresh rate
+7.5           % Max box length
+-1.0          % Volume dump frequency
+-1.0          % Calculate P for nvt
+1             % Frequency for outputting forces
+-1            % Frequency for outputting pairwise forces
+1             % Frequency for computing eigenvalues

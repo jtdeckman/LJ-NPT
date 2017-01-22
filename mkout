@@ -1,0 +1,1 @@
+mpif90 -g -O0  -o ljnpt.exe ljnpt.o mcljnpt.o modljnpt.o ptljnpt.o obsvljnpt.o dsyev.o quenchf.o -L/sopt/intel/Compiler/11.1/072/mkl/lib/em64t -lmkl_intel_lp64 -lmkl_sequential -lmkl_core
